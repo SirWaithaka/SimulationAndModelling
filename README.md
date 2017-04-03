@@ -1,2 +1,4 @@
-## DieSimulation
-A simple program to simulate the toss of a __die__ and get the number of times each face is gotten
+## Simulation and Modelling Course
+### By Prof Waweru - JKUAT  
+
+This is a repo containing all source code from class work and assignments from the course
