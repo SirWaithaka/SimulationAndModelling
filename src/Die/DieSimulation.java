@@ -3,21 +3,36 @@
 import java.util.*;
 import java.lang.*;
 import java.io.*;
+import java.util.stream.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
 class DieSimulation
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		// faces array to hold frequencies of the 6 faces
-		double[] faces = new double[6];
+		// frequency array to hold frequencies of the 6 frequency
+		double[] frequency = new double[6];
         int num = 0;
         
         while (num < 1000) {
-            faces = dice(faces);
+            frequency = dice(frequency);
             num += 1;
         }
-		System.out.println(Arrays.toString(faces));
+		double sumFrequency = DoubleStream.of(frequency).sum();
+		double[] percentageFrequency = new double[6];
+
+		for (int a = 0; a < 6; a ++) {
+			percentageFrequency[a] = (frequency[a] / sumFrequency) * 100;
+		}
+
+		System.out.printf("Face \t Frequenncy \t\t Percentage\n");
+		for (int a = 0; a < 6; a ++) {
+			System.out.printf("%d \t %.2f \t\t %.3f\n", (a+1), frequency[a], percentageFrequency[a]);
+		}
+
+		//System.out.println(sumFrequency);
+		//System.out.println(Arrays.toString(frequency));
+		//System.out.println(Arrays.toString(percentageFrequency));
 	}
 	
 	// Die function that will simulate a single toss of a die
