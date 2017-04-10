@@ -25,9 +25,9 @@ class DieSimulation
 			percentageFrequency[a] = (frequency[a] / sumFrequency) * 100;
 		}
 
-		System.out.printf("Face \t Frequenncy \t\t Percentage\n");
+		System.out.printf("Face \t Frequenncy \t Percentage\n");
 		for (int a = 0; a < 6; a ++) {
-			System.out.printf("%d \t %.2f \t\t %.3f\n", (a+1), frequency[a], percentageFrequency[a]);
+			System.out.printf("%d \t %.0f \t\t %.2f\n", (a+1), frequency[a], percentageFrequency[a]);
 		}
 
 		//System.out.println(sumFrequency);
@@ -40,12 +40,18 @@ class DieSimulation
 	    
     	double randomDouble = Math.random();
 
-	    if 		(randomDouble <= (1.0/6.0)) array[0] += 1;
-		else if (randomDouble > (1.0/6.0)  && randomDouble <= (2.0/6.0)) array[1] += 1;
-		else if (randomDouble > (2.0/6.0) && randomDouble <= (3.0/6.0)) array[2] += 1;
-		else if (randomDouble > (3.0/6.0) && randomDouble <= (4.0/6.0)) array[3] += 1;
-		else if (randomDouble > (4.0/6.0) && randomDouble <= (5.0/6.0)) array[4] += 1;
-		else array[5] += 1;
+	   if (randomDouble < (1.0/6.0))
+			array[0] += 1;
+		else if (randomDouble < (2.0/6.0))
+			array[1] += 1;
+		else if (randomDouble < (3.0/6.0))
+			array[2] += 1;
+		else if (randomDouble < (4.0/6.0))
+			array[3] += 1;
+		else if (randomDouble < (5.0/6.0))
+			array[4] += 1;
+		else if (randomDouble < (6.0/6.0)) 
+			array[5] += 1;
 		
 		return array;
 	}
