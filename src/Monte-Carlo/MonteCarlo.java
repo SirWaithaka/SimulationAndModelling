@@ -11,14 +11,14 @@ class MonteCarlo
    // to generate a uniform X value for a function parameter
    public static double generateUniformValue(double a, double b)
    {
-      double randomDouble = Math.random();
-      double randomValue = a + randomDouble * (a - b);
+      Random random = new Random();
+      double randomValue = a + random.nextDouble() * (a - b);
       return randomValue;
    }
    public static void main(String[] args)
    {
       int i = 0;
-      int n = 1000;
+      int n = 1000; // number of iterations to the function
       double pi = Math.PI;
       double sum = 0;
 
