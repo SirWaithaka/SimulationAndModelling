@@ -10,7 +10,7 @@ import java.lang.Math;
  */
 class MonteCarlo
 {
-   // this function uses the equation a + u(a - b)
+   // this function uses the equation a + u(b - a)
    // to generate a uniform X value for a function parameter
    public static double generateUniformValue(double a, double b)
    {
